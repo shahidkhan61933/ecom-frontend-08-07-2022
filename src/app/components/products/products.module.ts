@@ -6,7 +6,17 @@ import { ViewComponent } from './view/view.component';
 import { ListComponent } from './list/list.component';
 import { CartComponent } from './cart/cart.component';
 import { ReviewComponent } from './review/review.component';
+import { RouterModule, Routes } from '@angular/router';
 
+
+const routes: Routes = [
+    { path:'', component: ProductsComponent },
+    { path:'create', component: CreateComponent },
+    { path:'list', component: ListComponent },
+    { path:'cart', component: CartComponent },
+    { path:'view', component: ViewComponent },
+    { path:'review', component: ReviewComponent },    
+];
 
 
 @NgModule({
@@ -19,7 +29,9 @@ import { ReviewComponent } from './review/review.component';
     ReviewComponent
   ],
   imports: [
+    RouterModule.forChild(routes),
     CommonModule
-  ]
+  ],
+  exports: [RouterModule]
 })
 export class ProductsModule { }

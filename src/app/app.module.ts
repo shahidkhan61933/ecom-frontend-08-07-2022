@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidenavbarComponent } from './components/sidenavbar/sidenavbar.component';
 import { AbountUsComponent } from './components/abount-us/abount-us.component';
@@ -17,11 +16,10 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent,
     NavbarComponent,
     SidenavbarComponent,
     AbountUsComponent,  
-    NotFoundComponent   
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

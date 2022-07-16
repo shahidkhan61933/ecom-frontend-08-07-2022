@@ -7,8 +7,16 @@ import { ClassbindComponent } from './classbind/classbind.component';
 import { EventbindComponent } from './eventbind/eventbind.component';
 import { TwowayComponent } from './twoway/twoway.component';
 import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
 
-
+const routes: Routes = [
+  { path:'', component: OnewayComponent },
+  { path:'property', component: PropertyComponent },
+  { path:'style', component: StylebindComponent },
+  { path:'class', component: ClassbindComponent },
+  { path:'event', component: EventbindComponent },
+  { path:'twoway', component: TwowayComponent },    
+];
 
 @NgModule({
   declarations: [
@@ -20,8 +28,10 @@ import { FormsModule } from '@angular/forms';
     TwowayComponent,
   ],
   imports: [
+    RouterModule.forChild(routes),
     CommonModule,
     FormsModule,
   ],
+  exports: [RouterModule]
 })
 export class DataModule { }
