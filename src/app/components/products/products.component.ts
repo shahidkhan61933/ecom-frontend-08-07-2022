@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/models/user.model';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-products',
@@ -7,7 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
 
-  constructor() { }
+  public user:User;
+  public isLoggedIn;
+
+  constructor(public dataService:DataService) {
+    this.user = dataService.user;
+    this.isLoggedIn = dataService.isLoggedIn();
+   }
 
   ngOnInit(): void {
   }

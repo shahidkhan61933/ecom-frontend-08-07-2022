@@ -1,1 +1,13 @@
-<p>abount-us works!</p>
+<div class="container">
+    <h1>About Works!</h1>
+    <p class="alert alert-primary">
+        {{ user | json}}
+    </p>
+    <p class="alert alert-primary">
+        {{ userList | json}}
+    </p>
+
+    <p class="alert alert-primary">
+        User ID - {{ getUserId() }}
+    </p>
+</div>

@@ -7,6 +7,7 @@ import { ListComponent } from './list/list.component';
 import { CartComponent } from './cart/cart.component';
 import { ReviewComponent } from './review/review.component';
 import { RouterModule, Routes } from '@angular/router';
+import { DataService } from 'src/app/services/data.service';
 
 
 const routes: Routes = [
@@ -32,6 +33,7 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     CommonModule
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers:[DataService]
 })
 export class ProductsModule { }
