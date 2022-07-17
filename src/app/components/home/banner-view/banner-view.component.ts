@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BannerViewComponent implements OnInit {
 
+  public banner :string ="This is Banner compnnent data pass for home.";
+  
   constructor() { }
 
   ngOnInit(): void {

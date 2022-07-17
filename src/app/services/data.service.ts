@@ -26,6 +26,12 @@ export class DataService {
       email: 'mike@gmail.com', 
       status: false,
       address: 'MK Street'
+    } ,{
+      id: 10003, 
+      name: 'Will Smith',
+      email: 'will@gmail.com', 
+      status: false,
+      address: 'Will Street'
     }    
   ];
   public isLogged:boolean = false;
