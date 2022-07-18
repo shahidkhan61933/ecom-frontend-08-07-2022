@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user.model';
 import { DataService } from 'src/app/services/data.service';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-products',
@@ -9,15 +10,24 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class ProductsComponent implements OnInit {
 
-  public user:User;
-  public isLoggedIn;
+public products:any;
 
-  constructor(public dataService:DataService) {
-    this.user = dataService.user;
-    this.isLoggedIn = dataService.isLoggedIn();
-   }
+constructor(public productService:ProductService) { }
 
   ngOnInit(): void {
+
+    this.getAllProduct();
   }
+
+  getAllProduct() {
+    this.productService.getProduct()
+    .subscribe((data:any)=>{
+      this.products = data;
+      console.log(data);
+      
+    },(error:any)=>{
+      console.log(error);
+    });
+}
 
 }

@@ -10,6 +10,7 @@ import { SidenavbarComponent } from './components/sidenavbar/sidenavbar.componen
 import { AbountUsComponent } from './components/abount-us/abount-us.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
+    FormsModule,HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],
