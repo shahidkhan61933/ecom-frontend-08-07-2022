@@ -1,18 +1,49 @@
 import { Injectable } from "@angular/core";
 
-import { HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
     providedIn: 'root'
 })
-export class ProductService{
+export class ProductService {
 
-    private APIURL:string ='http://fakestoreapi.com/products';
+    private APIURL: string = 'http://fakestoreapi.com/products';
 
-    constructor(private httpClient:HttpClient) { }
+    constructor(private httpClient: HttpClient) { }
 
-    public getProduct():any{
-       // return observable
-       return this.httpClient.get(this.APIURL);
+    // get all products 
+    public getProducts(): any {
+        // return observable
+        return this.httpClient.get(this.APIURL);
+    }
+
+    // get one product
+    public getOne(id:number): any {
+        // return observable
+        return this.httpClient.get(`${this.APIURL}/${id}`);
+    }
+
+    // get one product
+    public getOneByTitle(title:string): any {
+        // return observable
+        return this.httpClient.get(`${this.APIURL}?title=${title}`);
+    }
+
+    // add one product
+    public addProduct(product:any): any {
+        // return observable
+        return this.httpClient.post(`${this.APIURL}`, product);
+    }
+
+    // update one product
+    public updateProduct(product:any): any {
+        // return observable
+        return this.httpClient.put(`${this.APIURL}/${product.id}`, product);
+    }
+
+    // update one product
+    public deleteProduct(id:number): any {
+        // return observable
+        return this.httpClient.delete(`${this.APIURL}/${id}`);
     }
 }

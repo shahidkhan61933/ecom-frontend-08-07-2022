@@ -20,7 +20,7 @@ constructor(public productService:ProductService) { }
   }
 
   getAllProduct() {
-    this.productService.getProduct()
+    this.productService.getProducts()
     .subscribe((data:any)=>{
       this.products = data;
       console.log(data);
